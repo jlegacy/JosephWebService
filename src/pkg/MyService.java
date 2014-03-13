@@ -1,5 +1,7 @@
 package pkg;
 
+import org.apache.axis2.context.MessageContext;
+
 import com.ibm.as400.access.*;
 
 public class MyService {
@@ -38,7 +40,7 @@ public class MyService {
 			String programName = "/QSYS.LIB/CGJLEGAC.LIB/TESTWEB.PGM";
 			// Set up the 1 parameters.
 			ProgramParameter[] parameterList = new ProgramParameter[2];
-
+			
 			// Parameter 1 is the First Name
 			AS400Text textData = new AS400Text(20, as400System);
 			parameterList[0] = new ProgramParameter(textData.toBytes(param));
@@ -82,8 +84,8 @@ public class MyService {
 		return message;
 	}
 
-	public String getStatus() {
-		return "No status available!";
+	public String showRemoteAddress() {
+		return (String)(MessageContext.getCurrentMessageContext()).getProperty(MessageContext.REMOTE_ADDR);
 	}
 
 }
