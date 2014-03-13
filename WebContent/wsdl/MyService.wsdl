@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://pkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://pkg" xmlns:intf="http://pkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://pkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getStatus">
+    <complexType/>
+   </element>
+   <element name="getStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="getStatusReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="Configure">
+    <complexType>
+     <sequence>
+      <element name="param" type="xsd:string"/>
+      <element name="val" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ConfigureResponse">
+    <complexType>
+     <sequence>
+      <element name="ConfigureReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="StartMe">
+    <complexType/>
+   </element>
+   <element name="StartMeResponse">
+    <complexType>
+     <sequence>
+      <element name="StartMeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="StopMe">
+    <complexType/>
+   </element>
+   <element name="StopMeResponse">
+    <complexType>
+     <sequence>
+      <element name="StopMeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="StartMeRequest">
+
+      <wsdl:part element="impl:StartMe" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConfigureRequest">
+
+      <wsdl:part element="impl:Configure" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StopMeRequest">
+
+      <wsdl:part element="impl:StopMe" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StopMeResponse">
+
+      <wsdl:part element="impl:StopMeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStatusResponse">
+
+      <wsdl:part element="impl:getStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStatusRequest">
+
+      <wsdl:part element="impl:getStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StartMeResponse">
+
+      <wsdl:part element="impl:StartMeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ConfigureResponse">
+
+      <wsdl:part element="impl:ConfigureResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MyService">
+
+      <wsdl:operation name="getStatus">
+
+         <wsdl:input message="impl:getStatusRequest" name="getStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStatusResponse" name="getStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="Configure">
+
+         <wsdl:input message="impl:ConfigureRequest" name="ConfigureRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:ConfigureResponse" name="ConfigureResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StartMe">
+
+         <wsdl:input message="impl:StartMeRequest" name="StartMeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:StartMeResponse" name="StartMeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StopMe">
+
+         <wsdl:input message="impl:StopMeRequest" name="StopMeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:StopMeResponse" name="StopMeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MyServiceSoapBinding" type="impl:MyService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="Configure">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ConfigureRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ConfigureResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StartMe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="StartMeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="StartMeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StopMe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="StopMeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="StopMeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MyServiceService">
+
+      <wsdl:port binding="impl:MyServiceSoapBinding" name="MyService">
+
+         <wsdlsoap:address location="http://localhost:8080/JosephWebService/services/MyService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
